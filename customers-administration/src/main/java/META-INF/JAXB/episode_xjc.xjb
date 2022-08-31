@@ -5,21 +5,21 @@
 Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.2 
 Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-Gerado em: 2022.08.31 às 04:12:28 PM BRT 
+Gerado em: 2022.08.31 às 05:00:06 PM BRT 
 
   -->
-  <bindings scd="x-schema::tns" xmlns:tns="http://in28minutes.com/courses">
+  <bindings scd="x-schema::tns" xmlns:tns="http://ajunior.com/courses">
     <schemaBindings map="false">
-      <package name="com.in28minutes.courses"/>
+      <package name="com.ajunior.courses"/>
     </schemaBindings>
     <bindings scd="tns:GetCourseDetailsRequest">
-      <class ref="com.in28minutes.courses.GetCourseDetailsRequest"/>
+      <class ref="com.ajunior.courses.GetCourseDetailsRequest"/>
     </bindings>
     <bindings scd="tns:GetCourseDetailsReponse">
-      <class ref="com.in28minutes.courses.GetCourseDetailsReponse"/>
+      <class ref="com.ajunior.courses.GetCourseDetailsReponse"/>
     </bindings>
     <bindings scd="~tns:CourseDetails">
-      <class ref="com.in28minutes.courses.CourseDetails"/>
+      <class ref="com.ajunior.courses.CourseDetails"/>
     </bindings>
   </bindings>
 </bindings>
