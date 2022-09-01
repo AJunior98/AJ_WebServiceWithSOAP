@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.2 
 // Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2022.08.31 às 05:55:29 PM BRT 
+// Gerado em: 2022.09.01 às 04:26:55 PM BRT 
 //
 
 
@@ -45,11 +45,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCourseDetailsReponse }
+     * Create an instance of {@link GetCourseDetailsResponse }
      * 
      */
-    public GetCourseDetailsReponse createGetCourseDetailsReponse() {
-        return new GetCourseDetailsReponse();
+    public GetCourseDetailsResponse createGetCourseDetailsResponse() {
+        return new GetCourseDetailsResponse();
     }
 
     /**
@@ -58,6 +58,22 @@ public class ObjectFactory {
      */
     public CourseDetails createCourseDetails() {
         return new CourseDetails();
+    }
+
+    /**
+     * Create an instance of {@link GetAllCourseDetailsRequest }
+     * 
+     */
+    public GetAllCourseDetailsRequest createGetAllCourseDetailsRequest() {
+        return new GetAllCourseDetailsRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetAllCourseDetailsResponse }
+     * 
+     */
+    public GetAllCourseDetailsResponse createGetAllCourseDetailsResponse() {
+        return new GetAllCourseDetailsResponse();
     }
 
 }

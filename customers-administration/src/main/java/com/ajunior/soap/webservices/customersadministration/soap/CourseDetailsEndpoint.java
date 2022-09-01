@@ -1,15 +1,21 @@
 package com.ajunior.soap.webservices.customersadministration.soap;
 
-import com.ajunior.courses.CourseDetails;
-import com.ajunior.courses.GetCourseDetailsReponse;
-import com.ajunior.courses.GetCourseDetailsRequest;
+import com.ajunior.courses.*;
+import com.ajunior.soap.webservices.customersadministration.soap.bean.Course;
+import com.ajunior.soap.webservices.customersadministration.soap.service.CourseDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+import java.util.List;
+
 @Endpoint
 public class CourseDetailsEndpoint {
+
+    @Autowired
+    CourseDetailsService service;
 
     //method
     //input - GetCourseDetailsRequest
@@ -20,16 +26,46 @@ public class CourseDetailsEndpoint {
 
     @PayloadRoot(namespace = "http://ajunior.com/courses", localPart = "GetCourseDetailsRequest")
     @ResponsePayload
-    public GetCourseDetailsReponse processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request) {
-        GetCourseDetailsReponse response = new GetCourseDetailsReponse();
-        CourseDetails courseDetails = new CourseDetails();
-        courseDetails.setId(request.getId());
-        courseDetails.setName("Microservices Course");
-        courseDetails.setDescription("That would be a wonderful course!");
+    public GetCourseDetailsResponse processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request) {
 
-        response.setCourseDetails(courseDetails);
+        Course course = service.findById(request.getId());
 
+        return mapCourseDetails(course);
+    }
+
+    private GetCourseDetailsResponse mapCourseDetails(Course course) {
+        GetCourseDetailsResponse response = new GetCourseDetailsResponse();
+        response.setCourseDetails(mapCourse(course));
         return response;
     }
 
+    private GetAllCourseDetailsResponse mapAllCourseDetails(List<Course> courses) {
+        GetAllCourseDetailsResponse response = new GetAllCourseDetailsResponse();
+        for (Course course : courses) {
+            CourseDetails mapCourse = mapCourse(course);
+            response.getCourseDetails().add(mapCourse);
+        }
+        return response;
+    }
+
+    private CourseDetails mapCourse(Course course) {
+        CourseDetails courseDetails = new CourseDetails();
+
+        courseDetails.setId(course.getId());
+
+        courseDetails.setName(course.getName());
+
+        courseDetails.setDescription(course.getDescription());
+        return courseDetails;
+    }
+
+    @PayloadRoot(namespace = "http://ajunior.com/courses", localPart = "GetAllCourseDetailsRequest")
+    @ResponsePayload
+    public GetAllCourseDetailsResponse processAllCourseDetailsRequest(
+            @RequestPayload GetAllCourseDetailsRequest request) {
+
+        List<Course> courses = service.findAll();
+
+        return mapAllCourseDetails(courses);
+    }
 }

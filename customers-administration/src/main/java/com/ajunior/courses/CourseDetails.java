@@ -2,13 +2,12 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.2 
 // Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2022.08.31 às 05:55:29 PM BRT 
+// Gerado em: 2022.09.01 às 04:26:55 PM BRT 
 //
 
 
 package com.ajunior.courses;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
@@ -44,8 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class CourseDetails {
 
-    @XmlElement(required = true)
-    protected BigInteger id;
+    protected int id;
     @XmlElement(required = true)
     protected String name;
     @XmlElement(required = true)
@@ -54,24 +52,16 @@ public class CourseDetails {
     /**
      * Obtém o valor da propriedade id.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getId() {
+    public int getId() {
         return id;
     }
 
     /**
      * Define o valor da propriedade id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setId(BigInteger value) {
+    public void setId(int value) {
         this.id = value;
     }
 

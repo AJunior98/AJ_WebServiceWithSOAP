@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.2 
+Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
+Gerado em: 2022.09.01 às 04:26:17 PM BRT 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://ajunior.com/courses">
+    <schemaBindings map="false">
+      <package name="com.ajunior.courses"/>
+    </schemaBindings>
+    <bindings scd="tns:GetCourseDetailsRequest">
+      <class ref="com.ajunior.courses.GetCourseDetailsRequest"/>
+    </bindings>
+    <bindings scd="tns:GetCourseDetailsResponse">
+      <class ref="com.ajunior.courses.GetCourseDetailsResponse"/>
+    </bindings>
+    <bindings scd="~tns:CourseDetails">
+      <class ref="com.ajunior.courses.CourseDetails"/>
+    </bindings>
+    <bindings scd="tns:GetAllCourseDetailsRequest">
+      <class ref="com.ajunior.courses.GetAllCourseDetailsRequest"/>
+    </bindings>
+    <bindings scd="tns:GetAllCourseDetailsResponse">
+      <class ref="com.ajunior.courses.GetAllCourseDetailsResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
