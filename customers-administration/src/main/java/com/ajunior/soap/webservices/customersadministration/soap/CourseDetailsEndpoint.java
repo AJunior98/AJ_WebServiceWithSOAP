@@ -1,5 +1,4 @@
 package com.ajunior.soap.webservices.customersadministration.soap;
-
 import com.ajunior.courses.*;
 import com.ajunior.soap.webservices.customersadministration.soap.bean.Course;
 import com.ajunior.soap.webservices.customersadministration.soap.service.CourseDetailsService;
@@ -68,4 +67,24 @@ public class CourseDetailsEndpoint {
 
         return mapAllCourseDetails(courses);
     }
+
+    @PayloadRoot(namespace = "http://ajunior.com/courses", localPart = "DeleteCourseDetailsRequest")
+    @ResponsePayload
+    public DeleteCourseDetailsResponse deleteCourseDetailsRequest(@RequestPayload DeleteCourseDetailsRequest request) {
+
+        CourseDetailsService.Status status = service.deleteById(request.getId());
+
+        DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
+        response.setStatus(mapStatus(status));
+
+        return response;
+    }
+
+    private Status mapStatus(CourseDetailsService.Status status) {
+        if (status== CourseDetailsService.Status.FAILURE)
+            return Status.FAILURE;
+        return Status.SUCCESS;
+
+    }
+
 }

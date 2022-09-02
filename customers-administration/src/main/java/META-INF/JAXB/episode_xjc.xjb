@@ -5,7 +5,7 @@
 Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.2 
 Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-Gerado em: 2022.09.01 às 04:26:17 PM BRT 
+Gerado em: 2022.09.02 às 03:09:40 PM BRT 
 
   -->
   <bindings scd="x-schema::tns" xmlns:tns="http://ajunior.com/courses">
@@ -26,6 +26,15 @@ Gerado em: 2022.09.01 às 04:26:17 PM BRT
     </bindings>
     <bindings scd="tns:GetAllCourseDetailsResponse">
       <class ref="com.ajunior.courses.GetAllCourseDetailsResponse"/>
+    </bindings>
+    <bindings scd="tns:DeleteCourseDetailsRequest">
+      <class ref="com.ajunior.courses.DeleteCourseDetailsRequest"/>
+    </bindings>
+    <bindings scd="tns:DeleteCourseDetailsResponse">
+      <class ref="com.ajunior.courses.DeleteCourseDetailsResponse"/>
+    </bindings>
+    <bindings scd="~tns:Status">
+      <typesafeEnumClass ref="com.ajunior.courses.Status"/>
     </bindings>
   </bindings>
 </bindings>
