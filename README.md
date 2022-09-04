@@ -7,16 +7,19 @@ SOAP foi anteriormente uma abreviação para Simple Object Access Protocol. No S
 ## REST x SOAP
 REST vs SOAP não são realmente comparáveis. REST é um estilo arquitetônico. SOAP é um formato de troca de mensagens.
 
-Vamos comparar as implementações populares dos estilos REST e SOAP.
+Comparando as implementações populares dos estilos REST e SOAP.
 
-Implementação da amostra RESTful : JSON sobre HTTP
-Implementação da amostra de SOAP : XML sobre SOAP sobre HTTP
-A seguir, as coisas importantes a considerar:
+- Implementação da amostra RESTful : JSON sobre HTTP
+- Implementação da amostra de SOAP : XML sobre SOAP sobre HTTP
 
-Rest é construído sobre o simples protocolo HTTP. Os serviços de SOAP são mais complexos de implementar e mais complexos de consumir.
-REST tem melhor desempenho e escalabilidade. As leituras de DESCANSO podem ser armazenadas em cache, as leituras baseadas em SOAP não podem ser armazenadas em cache.
-Rest permite muitos formatos de dados diferentes (JSON é a escolha mais popular) onde como o SOAP só permite XML.
-Os serviços SOAP possuem estrutura e interface bem definidas (WSDL) e possuem um conjunto de padrões bem definidos (WS-Security, WS-AtomicTransaction e WS-ReliableMessaging). As normas de documentação com REST estão evoluindo (usaremos o Swagger neste curso).
+## A seguir, as coisas importantes a considerar:
+- Rest é construído sobre o simples protocolo HTTP. 
+- Os serviços de SOAP são mais complexos de implementar e mais complexos de consumir.
+- REST tem melhor desempenho e escalabilidade. 
+- As leituras de DESCANSO podem ser armazenadas em cache, as leituras baseadas em SOAP não podem ser armazenadas em cache.
+- Rest permite muitos formatos de dados diferentes (JSON é a escolha mais popular) onde como o SOAP só permite XML.
+- Os serviços SOAP possuem estrutura e interface bem definidas (WSDL) e possuem um conjunto de padrões bem definidos (WS-Security, WS-AtomicTransaction e WS-ReliableMessaging). 
+- As normas de documentação com REST estão evoluindo (usaremos o Swagger neste curso).
 
 ## Exemplos de serviços SOAP
 
