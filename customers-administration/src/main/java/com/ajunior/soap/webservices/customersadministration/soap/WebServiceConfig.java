@@ -6,14 +6,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ws.config.annotation.EnableWs;
+import org.springframework.ws.config.annotation.WsConfigurerAdapter;
+import org.springframework.ws.server.EndpointInterceptor;
+import org.springframework.ws.soap.security.xwss.XwsSecurityInterceptor;
+import org.springframework.ws.soap.security.xwss.callback.SimplePasswordValidationCallbackHandler;
 import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
+import java.util.Collections;
+import java.util.List;
+
 @EnableWs
 @Configuration
-public class WebServiceConfig {
+public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext context) {
@@ -39,4 +46,31 @@ public class WebServiceConfig {
         return new SimpleXsdSchema(new ClassPathResource("xsd/course-details.xsd"));
     }
 
+    @Bean
+    public XwsSecurityInterceptor securityInterceptor(){
+        XwsSecurityInterceptor securityInterceptor = new XwsSecurityInterceptor();
+        securityInterceptor.setCallbackHandler(callbackhandler());
+        securityInterceptor.setPolicyConfiguration(new ClassPathResource("securityPolicy.xml"));
+        //Callback Handler -> SimplePasswordValidationCallBackHandler
+        //SecurityPolicy -> SecurityPolicy.xml
+        return securityInterceptor;
+
+    }
+    @Bean
+    public SimplePasswordValidationCallbackHandler callbackhandler() {
+        SimplePasswordValidationCallbackHandler handler = new SimplePasswordValidationCallbackHandler();
+        handler.setUsersMap(Collections.singletonMap("user", "password"));
+        return handler;
+    }
+    //XwsSecurityInterceptor
+
+    //Interceptors.add -> Xmssecurityinterceptor
+
+
+    @Override
+    public void addInterceptors(List<EndpointInterceptor> interceptors) {
+        interceptors.add(securityInterceptor());
+
+        super.addInterceptors(interceptors);
+    }
 }
